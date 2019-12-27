@@ -5,11 +5,9 @@ if not exist c:\mnt\ goto nomntdir
 
 @echo PARAM1 %1
 @echo PARAM2 %2
-@echo PARAM3 %3
-@echo PARAM4 %4
 
-if NOT DEFINED RELEASE_VERSION set RELEASE_VERSION=nightly
-if NOT DEFINED MAJOR_VERSION set MAJOR_VERSION=7
+set RELEASE_VERSION=%1
+set MAJOR_VERSION=%2
 
 mkdir \dev\go\src\github.com\DataDog\datadog-agent 
 if not exist \dev\go\src\github.com\DataDog\datadog-agent exit /b 1
