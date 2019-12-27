@@ -10,6 +10,7 @@ mkdir \dev\go\src\github.com\DataDog\datadog-agent
 if not exist \dev\go\src\github.com\DataDog\datadog-agent exit /b 1
 cd \dev\go\src\github.com\DataDog\datadog-agent || exit /b 2
 xcopy /e/s/h/q c:\mnt\*.* || exit /b 3
+inv -e agent.version
 inv -e deps --verbose --dep-vendor-only --no-checks || exit /b 4
 inv -e agent.omnibus-build --skip-deps --major-version %MAJOR_VERSION% --release-version %RELEASE_VERSION% || exit /b 5
 
