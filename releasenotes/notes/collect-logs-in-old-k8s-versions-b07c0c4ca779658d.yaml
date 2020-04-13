@@ -1,4 +1,0 @@
----
-features:
-  - |
-    Support collecting logs in old kubernetes versions (< v1.10).
